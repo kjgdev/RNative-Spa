@@ -8,16 +8,23 @@ import {
   StatusBar,
 } from 'react-native';
 import { NavigationContainer } from '@react-navigation/native';
+import { createStackNavigator } from '@react-navigation/stack';
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 import Icon from 'react-native-vector-icons/MaterialIcons';
-import {Home, Bag, Appointment, Info} from './src/components/screens/index'
+import {Home, Bag, Appointment, Info,SignIn,SignUp} from './src/components/screens/index'
 
 const Tab = createBottomTabNavigator();
+const Stack = createStackNavigator();
 
 const App = () => {
   return (
-    <NavigationContainer>
-      <Tab.Navigator
+    <NavigationContainer>  
+      <Stack.Navigator initialRouteName="SignIn" screenOptions={{headerShown:false}}>
+        <Stack.Screen name="SignIn" component={SignIn} />
+        <Stack.Screen name="SignUp" component={SignUp} />
+      </Stack.Navigator>
+      
+      {/* <Tab.Navigator
         screenOptions={({ route }) => ({
           tabBarIcon: ({ focused, color, size }) => {
             let iconName;
@@ -42,7 +49,7 @@ const App = () => {
         <Tab.Screen name="Appointment" component={Appointment} />
         <Tab.Screen name="Bag" component={Bag} />
         <Tab.Screen name="Info" component={Info} />
-      </Tab.Navigator>
+      </Tab.Navigator> */}
     </NavigationContainer>
   );
 };
