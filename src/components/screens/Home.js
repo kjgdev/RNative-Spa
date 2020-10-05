@@ -1,18 +1,32 @@
 import React, { Component } from 'react';
-import { View, Text, StyleSheet, Image, TouchableOpacity } from 'react-native';
+import { View, Text, StyleSheet, Image, TouchableOpacity, FlatList, ScrollView } from 'react-native';
 import { Dimensions } from 'react-native';
 import { TextInput } from 'react-native-gesture-handler';
 import { color } from 'react-native-reanimated';
 import Icon from 'react-native-vector-icons/MaterialIcons';
 import CustomIcon from '../customs/CustomIcon';
 import image1 from '../../assets/images/image1.jpg'
+import CardCustom from '../customs/CardCustom'
 
 const windowWidth = Dimensions.get('window').width;
 const windowHeight = Dimensions.get('window').height;
+const data1 = [
+    { imageBackground: { image1 }, title: 'Tắm trắng toàn thân', content: 'Trị liệu toàn thân bằng các loại thảo mộc quý hiếm', grade: '4.8' },
+    { imageBackground: { image1 }, title: 'Tắm trắng toàn thân', content: 'Trị liệu toàn thân bằng các loại thảo mộc quý hiếm', grade: '4.8' },
+    { imageBackground: { image1 }, title: 'Tắm trắng toàn thân', content: 'Trị liệu toàn thân bằng các loại thảo mộc quý hiếm', grade: '4.8' },
+    { imageBackground: { image1 }, title: 'Tắm trắng toàn thân', content: 'Trị liệu toàn thân bằng các loại thảo mộc quý hiếm', grade: '4.8' },
+    { imageBackground: { image1 }, title: 'Tắm trắng toàn thân', content: 'Trị liệu toàn thân bằng các loại thảo mộc quý hiếm', grade: '4.8' },
+    { imageBackground: { image1 }, title: 'Tắm trắng toàn thân', content: 'Trị liệu toàn thân bằng các loại thảo mộc quý hiếm', grade: '4.8' },
 
+]
 const Home = () => {
+
+    const renderItem = ({ item }) => (
+        <CardCustom itemimageBackground={item.itemimageBackground} title={item.title} content={item.content} grade={item.grade} />
+    );
     return (
         <View style={styles.viewContainer}>
+
             <View style={styles.header}>
                 <TouchableOpacity>
                     <Icon name='arrow-back-ios' style={styles.iconMenu}></Icon>
@@ -25,53 +39,79 @@ const Home = () => {
                     <Icon name='filter-list-alt' style={styles.iconMenu}></Icon>
                 </TouchableOpacity>
             </View>
-            <View style={styles.topCategoryContainer}>
-                <View style={styles.titleContent}>
-                    <Text style={{ fontSize: 16, fontWeight: 'bold' }}>Top Categorys</Text>
-                    <Text style={{ fontSize: 12, color: '#BDBDBD' }}>View all</Text>
-                </View>
-                <View style={styles.iconCategoryContainer}>
-                    <View style={{ alignItems: 'center' }}>
-                        <View style={styles.iconCategory1}>
-                            <Icon name='colorize' style={{ fontSize: 25, color: 'white' }} />
-                        </View >
-                        <Text style={{ fontSize: 12, fontWeight: 'bold', marginTop: 4 }}>Chăm sóc tóc</Text>
+            <ScrollView style={{ flex: 1 }}>
+                <View style={styles.topCategoryContainer}>
+                    <View style={styles.titleContent}>
+                        <Text style={{ fontSize: 16, fontWeight: 'bold' }}>Top Categorys</Text>
+                        <Text style={{ fontSize: 12, color: '#BDBDBD' }}>View all</Text>
                     </View>
-                    <View style={{ alignItems: 'center' }}>
-                        <View style={styles.iconCategory2} >
-                            <Icon name='colorize' style={{ fontSize: 25, color: 'white' }} />
+                    <View style={styles.iconCategoryContainer}>
+                        <View style={{ alignItems: 'center' }}>
+                            <View style={styles.iconCategory1}>
+                                <Icon name='colorize' style={{ fontSize: 25, color: 'white' }} />
+                            </View >
+                            <Text style={{ fontSize: 12, fontWeight: 'bold', marginTop: 4 }}>Chăm sóc tóc</Text>
                         </View>
-                        <Text style={{ fontSize: 12, fontWeight: 'bold', marginTop: 4 }}>Dáng người</Text>
-                    </View>
-                    <View style={{ alignItems: 'center' }}>
-                        <View style={styles.iconCategory3}>
-                            <Icon name='colorize' style={{ fontSize: 25, color: 'white' }} />
+                        <View style={{ alignItems: 'center' }}>
+                            <View style={styles.iconCategory2} >
+                                <Icon name='colorize' style={{ fontSize: 25, color: 'white' }} />
+                            </View>
+                            <Text style={{ fontSize: 12, fontWeight: 'bold', marginTop: 4 }}>Dáng người</Text>
                         </View>
-                        <Text style={{ fontSize: 12, fontWeight: 'bold', marginTop: 4 }}>Dưỡng da</Text>
-                    </View>
-                    <View style={{ alignItems: 'center' }}>
-                        <View style={styles.iconCategory4}>
-                            <Icon name='colorize' style={{ fontSize: 25, color: 'white' }} />
+                        <View style={{ alignItems: 'center' }}>
+                            <View style={styles.iconCategory3}>
+                                <Icon name='colorize' style={{ fontSize: 25, color: 'white' }} />
+                            </View>
+                            <Text style={{ fontSize: 12, fontWeight: 'bold', marginTop: 4 }}>Dưỡng da</Text>
                         </View>
-                        <Text style={{ fontSize: 12, fontWeight: 'bold', marginTop: 4 }}>Massage</Text>
+                        <View style={{ alignItems: 'center' }}>
+                            <View style={styles.iconCategory4}>
+                                <Icon name='colorize' style={{ fontSize: 25, color: 'white' }} />
+                            </View>
+                            <Text style={{ fontSize: 12, fontWeight: 'bold', marginTop: 4 }}>Massage</Text>
+                        </View>
                     </View>
                 </View>
-            </View>
-            <View style={styles.bestContainer}>
-                <View style={styles.titleContent}>
-                    <Text style={{ fontSize: 16, fontWeight: 'bold' }}>Best Service</Text>
-                    <Text style={{ fontSize: 12, color: '#BDBDBD' }}>View all</Text>
+                <View style={styles.bestContainer}>
+                    <View style={styles.titleContent}>
+                        <Text style={{ fontSize: 16, fontWeight: 'bold' }}>Best Service</Text>
+                        <Text style={{ fontSize: 12, color: '#BDBDBD' }}>View all</Text>
+                    </View>
+                    <View style={{ marginTop: 15, height: 130, alignItems: 'center', }}>
+                        <FlatList
+                            data={data1}
+                            renderItem={renderItem}
+                            horizontal={true}
+                        />
+                    </View>
                 </View>
-                <View style={styles.cardContainer}>
-                
-                        <Image style={styles.imageCard} source={image1} ></Image>
-                        <TouchableOpacity style={styles.buttonBook}>
-                            <Text style={{ fontSize: 12, fontWeight: 'bold', color: 'white' }}>Book</Text>
-                        </TouchableOpacity>
-            
-
+                <View style={styles.bestContainer}>
+                    <View style={styles.titleContent}>
+                        <Text style={{ fontSize: 16, fontWeight: 'bold' }}>New Service</Text>
+                        <Text style={{ fontSize: 12, color: '#BDBDBD' }}>View all</Text>
+                    </View>
+                    <View style={{ marginTop: 15, height: 130, alignItems: 'center', }}>
+                        <FlatList
+                            data={data1}
+                            renderItem={renderItem}
+                            horizontal={true}
+                        />
+                    </View>
                 </View>
-            </View>
+                <View style={styles.bestContainer}>
+                    <View style={styles.titleContent}>
+                        <Text style={{ fontSize: 16, fontWeight: 'bold' }}>New Service</Text>
+                        <Text style={{ fontSize: 12, color: '#BDBDBD' }}>View all</Text>
+                    </View>
+                    <View style={{ marginTop: 15, height: 130, alignItems: 'center', }}>
+                        <FlatList
+                            data={data1}
+                            renderItem={renderItem}
+                            horizontal={true}
+                        />
+                    </View>
+                </View>
+            </ScrollView>
         </View>
     );
 }
@@ -183,19 +223,24 @@ const styles = StyleSheet.create({
     },
     bestContainer: {
         marginTop: 24,
-        height: 130,
+        height: 170,
         width: windowWidth,
         paddingHorizontal: 25,
         flexDirection: 'column',
-        justifyContent: 'flex-start'
+        justifyContent: 'flex-start',
+        marginTop: 20,
     },
     cardContainer: {
         height: 120,
         width: 230,
         marginTop: 22,
-        backgroundColor: 'gray',
-        borderWidth: 1,
-        borderRadius: 8
+        backgroundColor: 'white',
+        borderRadius: 8,
+        shadowOffset: { width: 10, height: 10 },
+        shadowColor: '#EB5757',
+        shadowOpacity: 0.5,
+        shadowRadius: 2,
+        elevation: 7
     },
     imageCard: {
         height: 74,
