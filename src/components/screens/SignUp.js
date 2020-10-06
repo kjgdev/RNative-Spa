@@ -9,6 +9,7 @@ import {
     TextInput
 } from 'react-native'
 import DatePicker from 'react-native-datepicker'
+import { Switch } from 'react-native-switch'
 import backgroundImage from '../../assets/images/backgroundSignIn.png'
 import Icon  from 'react-native-vector-icons/MaterialIcons'
 import IconEye from 'react-native-vector-icons/MaterialCommunityIcons'
@@ -20,6 +21,7 @@ const windowHeight = Dimensions.get('window').height;
 
 const SignInContent= ({ navigation })=>{
     const [selectDate,setDate]= useState(new Date());  
+    const [genderSwitch,setGenderSwitch]= useState(true);
     const [showPass,setShowPass]= useState(true);
     const [press,setPress]= useState(false);
     const functionShowPass=()=>{
@@ -74,38 +76,45 @@ const SignInContent= ({ navigation })=>{
                     </View> 
                 </View>   
                  <View style={styles.forgotPassContainer}>
-                 <DatePicker
-                    style={styles.datepickerContainer}  
-                    date={selectDate}                  
-                    mode="date"
-                    placeholder="Select Date"
-                    format="YYYY-MM-DD"
-                    minDate="1950-01-01"
-                    maxDate={new Date()}
-                    confirmBtnText="Confirm"
-                    cancelBtnText="Cancel"
-                    customStyles={{                  
-                    dateInput: {                       
-                        borderBottomWidth:1,
-                        borderBottomColor: 'gray',
-                        borderColor:'transparent'                     
-                        
-                    },
-                    dateIcon: {
-                        position: 'absolute',
-                        left: 0,
-                        marginLeft: 2
-                        
-                    }
-                    // ... You can check the source to find the other keys.
-                    }}  
-                    onDateChange={setDate}                
-                />
-                     <TouchableOpacity onPress={()=> {
-                         navigation.navigate('SignUp')
-                     }}>
-                         <Text>Sign up</Text>                               
-                    </TouchableOpacity>
+                    <DatePicker
+                        style={styles.datepickerContainer}  
+                        date={selectDate}                  
+                        mode="date"
+                        placeholder="Select Date"
+                        format="YYYY-MM-DD"
+                        minDate="1950-01-01"
+                        maxDate={new Date()}
+                        confirmBtnText="Confirm"
+                        cancelBtnText="Cancel"
+                        customStyles={{                  
+                        dateInput: {                       
+                            borderBottomWidth:1,
+                            borderBottomColor: 'gray',
+                            borderColor:'transparent'                     
+                            
+                        },
+                        dateIcon: {
+                            position: 'absolute',
+                            left: 0,
+                            marginLeft: 2
+                            
+                        }
+                        // ... You can check the source to find the other keys.
+                        }}  
+                        onDateChange={setDate}                
+                    />
+                     <Switch value={genderSwitch}
+                        onValueChange={setGenderSwitch}
+                        disabled={false}
+                        activeText={'Male'}
+                        inActiveText={'Female'}
+                        circleSize={30}
+                        barHeight={1}
+                        circleBorderWidth={3}
+                        backgroundActive={'#EB5757'}
+                        backgroundInactive={'gray'}
+                        circleActiveColor={'#30a566'}
+                        circleInActiveColor={'#000000'}/>
                  </View>
             </View>           
         </>
