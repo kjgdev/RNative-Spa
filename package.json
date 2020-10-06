@@ -16,6 +16,7 @@
     "@react-navigation/stack": "^5.9.2",
     "react": "16.11.0",
     "react-native": "^0.63.3",
+    "react-native-confirmation-code-field": "^6.5.0",
     "react-native-datepicker": "^1.7.2",
     "react-native-gesture-handler": "^1.8.0",
     "react-native-reanimated": "^1.13.1",
@@ -31,6 +32,7 @@
     "babel-jest": "^24.9.0",
     "eslint": "^6.5.1",
     "jest": "^24.9.0",
+    "lato-font": "^3.0.0",
     "metro-react-native-babel-preset": "^0.58.0",
     "react-test-renderer": "16.11.0"
   },

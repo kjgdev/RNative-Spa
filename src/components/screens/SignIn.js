@@ -51,7 +51,7 @@ const SignInContent= ({ navigation })=>{
                         
                     </View>              
                     <View style={styles.input}   >
-                        <TextInput underlineColorAndroid='transparent' placeholder='Password' secureTextEntry={showPass} style={styles.input}>
+                        <TextInput underlineColorAndroid='transparent' placeholder='Password' fontFamily='Lato' secureTextEntry={showPass} style={styles.input}>
                         </TextInput> 
                         <TouchableOpacity style={styles.btnEye} onPress={functionShowPass}>
                             <IconEye name={press== false ? 'eye':'eye-off'} color='gray' size={26}/>                            
@@ -103,6 +103,7 @@ const styles = StyleSheet.create({
     },
     logoText:{
         fontSize:30,
+        fontFamily:'Lato',
         color: '#EB5757',
         position: "absolute",
         width: windowWidth*0.4,
@@ -138,12 +139,14 @@ const styles = StyleSheet.create({
         color: 'black',       
         left: windowWidth*0.1,       
         fontWeight:"bold",
+        fontFamily:'Lato',
         top:-windowWidth*0.1,       
     },
     input:{
         width:windowWidth*0.76,
         height:windowWidth*0.12,
-        fontSize:16,           
+        fontSize:16,       
+        fontFamily:'Lato',    
         borderBottomWidth:1,
         borderBottomColor: 'gray',
         justifyContent:"center",
