@@ -9,6 +9,7 @@ import {
     TextInput
 } from 'react-native'
 import DatePicker from 'react-native-datepicker'
+import DatePicker2 from '@bit/lekanmedia.shared-ui.date-picker';
 import { Switch } from 'react-native-switch'
 import backgroundImage from '../../assets/images/backgroundSignIn.png'
 import Icon  from 'react-native-vector-icons/MaterialIcons'
@@ -120,7 +121,7 @@ const SignInContent= ({ navigation })=>{
                             circleInActiveColor={'gray'}
                             />
                     </View>
-                     
+                    <DatePicker2 onSelect={value => alert(value)} />
                  </View>
             </View>           
         </>
