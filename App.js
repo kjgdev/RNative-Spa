@@ -11,7 +11,7 @@ import { NavigationContainer } from '@react-navigation/native';
 import { createStackNavigator } from '@react-navigation/stack';
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 import Icon from 'react-native-vector-icons/MaterialIcons';
-import {Home, Bag, Appointment, Info,SignIn,SignUp,Verification} from './src/components/screens/index'
+import {Home, Bag, Appointment, Info,SignIn,SignUp,Verification,Book3} from './src/components/screens/index'
 
 const Tab = createBottomTabNavigator();
 const Stack = createStackNavigator();
@@ -19,11 +19,14 @@ const Stack = createStackNavigator();
 const App = () => {
   return (
     <NavigationContainer>  
-      <Stack.Navigator initialRouteName="SignIn" screenOptions={{headerShown:false}}>
+      {/* <Stack.Navigator initialRouteName="SignIn" screenOptions={{headerShown:false}}>
         <Stack.Screen name="SignIn" component={SignIn} />
         <Stack.Screen name="SignUp" component={SignUp} />
         <Stack.Screen name="Verification" component={Verification} />
-      </Stack.Navigator>
+      </Stack.Navigator> */}
+      <Book3>
+        
+      </Book3>
       
       {/* <Tab.Navigator
         screenOptions={({ route }) => ({

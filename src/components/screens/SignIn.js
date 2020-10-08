@@ -46,12 +46,12 @@ const SignInContent= ({ navigation })=>{
                  <Text style={styles.signInText}>Sign in</Text> 
                  <View style={styles.inputContainer}>
                     <View style={styles.input} >
-                        <TextInput placeholder='Phone Number' style={styles.input}  >
+                        <TextInput placeholder='Phone Number'  >
                         </TextInput> 
                         
                     </View>              
                     <View style={styles.input}   >
-                        <TextInput underlineColorAndroid='transparent' placeholder='Password' fontFamily='Lato' secureTextEntry={showPass} style={styles.input}>
+                        <TextInput underlineColorAndroid='transparent' placeholder='Password' fontFamily='Lato' secureTextEntry={showPass}>
                         </TextInput> 
                         <TouchableOpacity style={styles.btnEye} onPress={functionShowPass}>
                             <IconEye name={press== false ? 'eye':'eye-off'} color='gray' size={26}/>                            
@@ -148,7 +148,7 @@ const styles = StyleSheet.create({
         fontSize:16,       
         fontFamily:'Lato',    
         borderBottomWidth:1,
-        borderBottomColor: 'gray',
+        borderBottomColor: '#E0E0E0',
         justifyContent:"center",
 
     },

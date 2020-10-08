@@ -9,11 +9,12 @@ import {
     TextInput
 } from 'react-native'
 import DatePicker from 'react-native-datepicker'
-import DatePicker2 from '@bit/lekanmedia.shared-ui.date-picker';
+
 import { Switch } from 'react-native-switch'
 import backgroundImage from '../../assets/images/backgroundSignIn.png'
 import Icon  from 'react-native-vector-icons/MaterialIcons'
 import IconEye from 'react-native-vector-icons/MaterialCommunityIcons'
+import { color } from 'react-native-reanimated';
 
 const windowWidth = Dimensions.get('window').width;
 const windowHeight = Dimensions.get('window').height;
@@ -56,24 +57,24 @@ const SignInContent= ({ navigation })=>{
                  <Text style={styles.signInText}>Sign Up</Text> 
                  <View style={styles.inputContainer}>
                     <View style={styles.input} >
-                        <TextInput placeholder='Email' style={styles.input}  >
+                        <TextInput placeholder='Email'  >
                         </TextInput> 
                         
                     </View>              
                     <View style={styles.input}   >
-                        <TextInput  placeholder='Password'  fontFamily='Lato' secureTextEntry={showPass} style={styles.input}>
+                        <TextInput  placeholder='Password'  fontFamily='Lato' secureTextEntry={showPass} >
                         </TextInput> 
                         <TouchableOpacity style={styles.btnEye} onPress={functionShowPass}>
                             <IconEye name={press== false ? 'eye':'eye-off'} color='gray' size={26}/>                            
                         </TouchableOpacity>
                     </View>
                     <View style={styles.input} >
-                        <TextInput placeholder='Name' style={styles.input}  >
+                        <TextInput placeholder='Name'   >
                         </TextInput> 
                         
                     </View> 
                     <View style={styles.input} >
-                        <TextInput placeholder='Phone' style={styles.input}  >
+                        <TextInput placeholder='Phone'   >
                         </TextInput> 
                         
                     </View> 
@@ -83,25 +84,22 @@ const SignInContent= ({ navigation })=>{
                         style={styles.datepickerContainer}  
                         date={selectDate}                  
                         mode="date"
+                        
                         placeholder="Select Date"
                         format="YYYY-MM-DD"
                         minDate="1950-01-01"
                         maxDate={new Date()}
                         confirmBtnText="Confirm"
                         cancelBtnText="Cancel"
+                        
                         customStyles={{                  
                         dateInput: {                       
                             borderBottomWidth:1,
-                            borderBottomColor: 'gray',
-                            borderColor:'transparent'                     
-                            
-                        },
-                        dateIcon: {
-                            position: 'absolute',
-                            left: 0,
-                            marginLeft: 2
-                            
+                            borderBottomColor: '#E0E0E0',
+                            borderColor:'transparent'   ,                  
+                            color:'#E0E0E0'
                         }
+                       
                         // ... You can check the source to find the other keys.
                         }}  
                         onDateChange={setDate}                
@@ -114,14 +112,18 @@ const SignInContent= ({ navigation })=>{
                             activeText={'Female'}
                             inActiveText={'Male'}                                        
                             changeValueImmediately={true}                       
-                            backgroundActive={'#EB5757'}
+                            backgroundActive={'#ED7676'}
                             backgroundInactive={'gray'}
                             circleActiveColor={'#EB5757'}
+                            circleBorderWidth={0}
+                            circle
                             circleBorderActiveColor={'white'}
-                            circleInActiveColor={'gray'}
+                            circleBorderInactiveColor={'#EB5757'}
+                            circleInActiveColor={'#E0E0E0'}
+                            
                             />
                     </View>
-                    <DatePicker2 onSelect={value => alert(value)} />
+                    
                  </View>
             </View>           
         </>
@@ -208,10 +210,11 @@ const styles = StyleSheet.create({
     input:{
         width:windowWidth*0.76,
         height:windowWidth*0.12,
+        marginTop:windowWidth*0.02,
         fontSize:16,    
         fontFamily:'Lato',       
         borderBottomWidth:1,
-        borderBottomColor: 'gray',
+        borderBottomColor: '#E0E0E0',
         justifyContent:"center",
 
     },
