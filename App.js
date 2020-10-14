@@ -24,11 +24,9 @@ const App = () => {
         <Stack.Screen name="SignUp" component={SignUp} />
         <Stack.Screen name="Verification" component={Verification} />
       </Stack.Navigator> */}
-      <Book3>
-        
-      </Book3>
       
-      {/* <Tab.Navigator
+      
+      <Tab.Navigator
         screenOptions={({ route }) => ({
           tabBarIcon: ({ focused, color, size }) => {
             let iconName;
@@ -53,7 +51,7 @@ const App = () => {
         <Tab.Screen name="Appointment" component={Appointment} />
         <Tab.Screen name="Bag" component={Bag} />
         <Tab.Screen name="Info" component={Info} />
-      </Tab.Navigator> */}
+      </Tab.Navigator>
     </NavigationContainer>
   );
 };

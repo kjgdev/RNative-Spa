@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { View, Text, StyleSheet, Image, TouchableOpacity,Dimensions } from 'react-native';
+import { View, Text, StyleSheet, Image, TouchableOpacity, Dimensions } from 'react-native';
 //import image1 from '../../assets/images/image1.jpg'
 import Icon from 'react-native-vector-icons/MaterialIcons';
 import image1 from '../assets/images/image1.jpg'
