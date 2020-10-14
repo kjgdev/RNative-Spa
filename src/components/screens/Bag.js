@@ -27,8 +27,7 @@ const Bag = () => {
                             time={item.time} price={item.price} choosed={item.choosed}/>
     );
     return (
-        <View style={styles.viewContainer}>
-            
+        <View style={styles.viewContainer}>           
             <View style={styles.header}>
             <TouchableOpacity>
                     <Icon name='menu' style={styles.iconMenu}></Icon>
@@ -40,8 +39,20 @@ const Bag = () => {
             <FlatList
                 data={data1}
                 renderItem={renderItem}
-                horizontal={false}
-        />
+                horizontal={false}/>
+            <View style={styles.tongTienContainer}>
+                <View style={{flexDirection:'row'}}>
+                    <Text style={{fontSize:16,fontWeight:'bold'}}>Tổng cộng</Text>
+                    <Text style={{fontSize:16,fontWeight:'bold',color:'#EB5757',marginLeft:windowHeight*0.02}}>$1000</Text>
+                </View>
+                <TouchableOpacity style={{width:windowWidth*0.35,height:windowWidth*0.1, backgroundColor:'#EB5757',
+                                alignItems:'center',justifyContent:'center',borderRadius:5,marginRight:5}} 
+                                onPress={() => {
+                                    setModalVisible(!modalVisible);
+                                }}>
+                        <Text style={{fontSize: 14,color:'white'}} >Đặt lịch</Text>
+                    </TouchableOpacity>
+            </View>
     </View>
     );
 }
@@ -78,7 +89,18 @@ const styles = StyleSheet.create({
         color:'#EB5757',
         fontWeight:'bold',       
     },
-    
+    tongTienContainer:{ 
+        flexDirection:'row',
+        justifyContent:'space-between',
+        alignItems:'center',
+        height: windowWidth*0.16,
+        width:windowWidth,
+        paddingHorizontal:windowWidth*0.04,
+        borderColor:'#BDBDBD',
+        borderWidth:1,
+        borderTopStartRadius:5
+
+    },
 })
 
 export default Bag;
