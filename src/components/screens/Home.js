@@ -119,6 +119,7 @@ const Home = () => {
 const styles = StyleSheet.create({
     viewContainer: {
         flex: 1,
+        height:windowHeight,
         backgroundColor: 'white',
         flexDirection: 'column',
         alignItems: 'center'
