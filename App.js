@@ -13,6 +13,7 @@ import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 import Icon from 'react-native-vector-icons/MaterialIcons';
 import {Home, Bag, Appointment, Info,SignIn,SignUp,Verification,Book3} from './src/components/screens/index'
 
+
 const Tab = createBottomTabNavigator();
 const Stack = createStackNavigator();
 

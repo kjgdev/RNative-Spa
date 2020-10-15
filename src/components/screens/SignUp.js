@@ -14,7 +14,7 @@ import { Switch } from 'react-native-switch'
 import backgroundImage from '../../assets/images/backgroundSignIn.png'
 import Icon  from 'react-native-vector-icons/MaterialIcons'
 import IconEye from 'react-native-vector-icons/MaterialCommunityIcons'
-import { color } from 'react-native-reanimated';
+
 
 const windowWidth = Dimensions.get('window').width;
 const windowHeight = Dimensions.get('window').height;

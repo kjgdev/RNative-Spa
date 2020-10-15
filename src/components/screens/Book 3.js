@@ -2,7 +2,7 @@ import React, { Component,useState} from 'react';
 import { View, Text, StyleSheet, Image, TouchableOpacity, FlatList, ScrollView } from 'react-native';
 import { Dimensions,Modal } from 'react-native';
 import { TextInput } from 'react-native-gesture-handler';
-import { color } from 'react-native-reanimated';
+
 import Icon from 'react-native-vector-icons/MaterialIcons';
 import IconDiscount from 'react-native-vector-icons/MaterialCommunityIcons'
 import image1 from '../../assets/images/image1.jpg'

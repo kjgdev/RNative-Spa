@@ -12,6 +12,7 @@
   "dependencies": {
     "@react-native-community/masked-view": "^0.1.10",
     "@react-navigation/bottom-tabs": "^5.9.1",
+    "@react-navigation/material-top-tabs": "^5.2.19",
     "@react-navigation/native": "^5.7.5",
     "@react-navigation/stack": "^5.9.2",
     "react": "16.11.0",
@@ -19,10 +20,10 @@
     "react-native-confirmation-code-field": "^6.5.0",
     "react-native-datepicker": "^1.7.2",
     "react-native-gesture-handler": "^1.8.0",
-    "react-native-reanimated": "^1.13.1",
     "react-native-safe-area-context": "^3.1.8",
     "react-native-screens": "^2.11.0",
     "react-native-switch": "^2.0.0",
+    "react-native-tab-view": "^2.15.2",
     "react-native-vector-icons": "^7.1.0"
   },
   "devDependencies": {
