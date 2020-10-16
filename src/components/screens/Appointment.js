@@ -1,6 +1,8 @@
 import React, { Component,useState} from 'react';
 import { View, Text, StyleSheet, Image, TouchableOpacity,Dimensions, FlatList, ScrollView } from 'react-native';
-import CardAppointment from '../../custom/CardAppointment'
+import DangHenScreen from '../screens/appointmentscreen/DangHen'
+import DaHoanThanhScreen from '../screens/appointmentscreen/DaHoanThanh'
+import DanhGiaScreen from '../screens/appointmentscreen/DanhGia'
 
 const windowWidth = Dimensions.get('window').width;
 const windowHeight = Dimensions.get('window').height;
@@ -16,11 +18,8 @@ const data1 = [
 ]
 
 
-const Appointment = () => {
-    const renderItem = ({ item }) => (
-        <CardAppointment  branch={item.branch} status={item.status} 
-                            time={item.time} price={item.price} />
-    );
+const Appointment = () => { 
+    
     const [dgHen,setDgHen]= useState(true);
     const [daHoanThanh,setDaHoanThanh]= useState(false);
     const [danhGia,setDanhGia]= useState(false);
@@ -58,12 +57,13 @@ const Appointment = () => {
                     <Text style={danhGia ? {fontWeight:'bold',color:'black'}:{fontWeight:'normal',color:'gray'}}>Đánh giá</Text>
                 </TouchableOpacity>
             </View>
-            <View style={{height:windowWidth*1.78}}>
-                <FlatList
-                    data={data1}
-                    renderItem={renderItem}
-                    horizontal={false}/>
+            <View>
+                {dgHen? <DangHenScreen/>:null}
+                {daHoanThanh? <DaHoanThanhScreen/>:null}
+                {danhGia? <DanhGiaScreen/>:null}
             </View>
+            
+
         </View>
     );
 }
