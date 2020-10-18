@@ -12,13 +12,13 @@ import CardChiTietGioHang from '../../custom/CardChiTietGioHang'
 const windowWidth = Dimensions.get('window').width;
 const windowHeight = Dimensions.get('window').height;
 const data1 = [
-    { imageBackground: { image1 }, title: 'Tắm trắng toàn thân', content: 'Trị liệu toàn thân bằng các loại thảo mộc quý hiếm', grade: '4.8', time:'15min', price:'$100', choosed:'88%' },
-    { imageBackground: { image1 }, title: 'Tắm trắng toàn thân', content: 'Trị liệu toàn thân bằng các loại thảo mộc quý hiếm', grade: '4.8', time:'15min', price:'$100', choosed:'88%' },
-    { imageBackground: { image1 }, title: 'Tắm trắng toàn thân', content: 'Trị liệu toàn thân bằng các loại thảo mộc quý hiếm', grade: '4.8', time:'15min', price:'$100', choosed:'88%' },
-    { imageBackground: { image1 }, title: 'Tắm trắng toàn thân', content: 'Trị liệu toàn thân bằng các loại thảo mộc quý hiếm', grade: '4.8', time:'15min', price:'$100', choosed:'88%' },
-    { imageBackground: { image1 }, title: 'Tắm trắng toàn thân', content: 'Trị liệu toàn thân bằng các loại thảo mộc quý hiếm', grade: '4.8', time:'15min', price:'$100', choosed:'88%' },
-    { imageBackground: { image1 }, title: 'Tắm trắng toàn thân', content: 'Trị liệu toàn thân bằng các loại thảo mộc quý hiếm', grade: '4.8' ,time:'15min', price:'$100', choosed:'88%'},
-    { imageBackground: { image1 }, title: 'Tắm trắng toàn thân', content: 'Trị liệu toàn thân bằng các loại thảo mộc quý hiếm', grade: '4.8' ,time:'15min', price:'$100', choosed:'88%'},
+    { imageBackground: { image1 }, title: 'Tắm trắng toàn thân', content: 'Trị liệu toàn thân bằng các loại thảo mộc quý hiếm', grade: '4.8', time:'15', price:'$100', choosed:'88%' },
+    { imageBackground: { image1 }, title: 'Tắm trắng toàn thân', content: 'Trị liệu toàn thân bằng các loại thảo mộc quý hiếm', grade: '4.8', time:'15', price:'$100', choosed:'88%' },
+    { imageBackground: { image1 }, title: 'Tắm trắng toàn thân', content: 'Trị liệu toàn thân bằng các loại thảo mộc quý hiếm', grade: '4.8', time:'15', price:'$100', choosed:'88%' },
+    { imageBackground: { image1 }, title: 'Tắm trắng toàn thân', content: 'Trị liệu toàn thân bằng các loại thảo mộc quý hiếm', grade: '4.8', time:'15', price:'$100', choosed:'88%' },
+    { imageBackground: { image1 }, title: 'Tắm trắng toàn thân', content: 'Trị liệu toàn thân bằng các loại thảo mộc quý hiếm', grade: '4.8', time:'15', price:'$100', choosed:'88%' },
+    { imageBackground: { image1 }, title: 'Tắm trắng toàn thân', content: 'Trị liệu toàn thân bằng các loại thảo mộc quý hiếm', grade: '4.8' ,time:'15', price:'$100', choosed:'88%'},
+    { imageBackground: { image1 }, title: 'Tắm trắng toàn thân', content: 'Trị liệu toàn thân bằng các loại thảo mộc quý hiếm', grade: '4.8' ,time:'15', price:'$100', choosed:'88%'},
 ]
 
 const Bag = () => {

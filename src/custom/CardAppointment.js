@@ -6,12 +6,14 @@ import IconCommunity from 'react-native-vector-icons/MaterialCommunityIcons';
 
 const windowWidth = Dimensions.get('window').width;
 const windowHeight = Dimensions.get('window').height;
-const CardCustom = (props) => {
+const CardCustom = (props,{navigation}) => {
     const { branch, status, price, time} = props;
     
     return (
         <View style={styles.container}>
-            <View style={styles.cardContent}>
+            <TouchableOpacity style={styles.cardContent} onPress={()=> {
+                         navigation.navigate('AppointmentDetail')
+                     }}>
                 <View style={styles.content}>
                     <Image source={backgroundImage} style={styles.image}></Image>
                     <View style={{paddingLeft:windowWidth*0.02 }}>                       
@@ -36,7 +38,7 @@ const CardCustom = (props) => {
                         </View>                                                          
                     </View>                   
                 </View>              
-            </View>
+            </TouchableOpacity>
             
         </View>
     );

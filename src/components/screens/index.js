@@ -6,5 +6,6 @@ import SignIn from'./SignIn'
 import SignUp from'./SignUp'
 import Verification from'./Verification'
 import Book3 from './Book 3'
+import AppointmentDetail from './AppointmentDetail'
 
-export {Home, Bag, Appointment, Info,SignIn,SignUp,Verification,Book3}
+export {Home, Bag, Appointment, Info,SignIn,SignUp,Verification,Book3,AppointmentDetail}

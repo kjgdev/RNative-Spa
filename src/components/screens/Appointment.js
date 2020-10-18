@@ -57,7 +57,10 @@ const Appointment = () => {
                     <Text style={danhGia ? {fontWeight:'bold',color:'black'}:{fontWeight:'normal',color:'gray'}}>Đánh giá</Text>
                 </TouchableOpacity>
             </View>
-            <View>
+            <View style={{height:windowWidth*0.088, width:windowWidth,borderBottomColor:'#BDBDBD',borderBottomWidth:1}}>
+
+            </View>
+            <View style={{height:windowWidth*1.5,}}>
                 {dgHen? <DangHenScreen/>:null}
                 {daHoanThanh? <DaHoanThanhScreen/>:null}
                 {danhGia? <DanhGiaScreen/>:null}

@@ -13,24 +13,30 @@ const CardCustom = (props) => {
             <View style={styles.cardContent}>
                 <View style={styles.content}>
                     <Image source={backgroundImage} style={styles.image}></Image>
-                    <View style={{paddingLeft:windowWidth*0.01 }}>                       
-                        <View style={{ flexDirection: 'row',width:windowWidth*0.65,height:windowWidth*0.13,  justifyContent: 'space-between',}}>
-                            <View style={{}}>
-                                <Text style={{ fontSize: 14, fontWeight: 'bold' }}>{title}</Text>   
-                                <Text style={{ fontSize: 10, width: windowWidth*0.4, color: '#BDBDBD' }}>{content}</Text>                         
+                    <View style={{paddingLeft:windowWidth*0.02, }}>                       
+                        <View style={{ flexDirection: 'row',width:windowWidth*0.63,justifyContent: 'space-between'}}>
+                            <View style={{height:windowWidth*0.18,  justifyContent: 'space-between'}}>
+                                <Text style={{ fontSize: 16, fontWeight: 'bold' }}>{title}</Text>   
+                                <Text style={{ fontSize: 12, width: windowWidth*0.4, color: '#BDBDBD' }}>{content}</Text>   
+                                <View style={{ flexDirection: 'row', alignItems: 'center' }}>
+                                    <View style={{width:windowWidth*0.06,height:windowWidth*0.04,justifyContent:'center', borderRadius:4,backgroundColor:'#F2C94C',alignItems:'center'}}>
+                                        <Text style={{ fontSize: 10,color:'white' }}>{grade}</Text>
+                                    </View>
+                                <View style={styles.separate} />
+                                <Text style={{ fontSize: 10,color:'#BDBDBD' }}>{choosed}</Text>                              
+                        </View>                      
                             </View>
                             <View style={{}}>
-                                <Text style={{ fontSize: 14, fontWeight: 'bold' }}>{price}</Text>   
-                                    <Text style={{ fontSize: 10, color: '#BDBDBD' }}>{time}</Text>  
+                                <Text style={{ fontSize: 16,  }}>{price}</Text>   
+                                <View style={{flexDirection: 'row'}}>
+                                    <Text style={{ fontSize: 12, color: '#BDBDBD' }}>/</Text>  
+                                    <Text style={{ fontSize: 12, color: '#BDBDBD' }}>{time}</Text>
+                                    <Text style={{ fontSize: 12, color: '#BDBDBD' }}>min</Text>
+                                </View>
+                                  
                             </View>  
                         </View>                             
-                        <View style={{ flexDirection: 'row', alignItems: 'center' }}>
-                            <View style={{width:windowWidth*0.06,height:windowWidth*0.04, borderRadius:4,backgroundColor:'#F2C94C',alignItems:'center'}}>
-                                <Text style={{ fontSize: 10,color:'white' }}>{grade}</Text>
-                            </View>
-                            <View style={styles.separate} />
-                            <Text style={{ fontSize: 10,color:'#BDBDBD' }}>{choosed}</Text>                              
-                        </View>         
+                                
                     </View>                   
                 </View>              
             </View>

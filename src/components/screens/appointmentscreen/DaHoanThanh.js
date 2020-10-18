@@ -20,7 +20,7 @@ const DaHoanThanh = () => {
                             time={item.time} price={item.price} />
     );
     return (
-        <View style={{height:windowWidth*1.66}}>
+        <View >
                 <FlatList
                     data={data1}
                     renderItem={renderItem}

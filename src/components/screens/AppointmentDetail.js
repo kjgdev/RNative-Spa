@@ -8,81 +8,39 @@ import IconDiscount from 'react-native-vector-icons/MaterialCommunityIcons'
 import IconCrown from 'react-native-vector-icons/FontAwesome5' 
 import image1 from '../../assets/images/image1.jpg'
 import Success from '../../assets/images/success.png'
-import CardChiTietBook3 from '../../custom/CardChiTietBook3'
+import CardAppointmentDetail from '../../custom/CardAppointmentDetail'
 
 const windowWidth = Dimensions.get('window').width;
 const windowHeight = Dimensions.get('window').height;
 const dataBranch = {branch:'Nguyễn Văn Cừ',time:'10h 15/10/2020',roomtype:0};
 
 const data1 = [
-    { imageBackground: { image1 }, title: 'Tắm trắng toàn thân', time: '15 min', price: '$100' },
-    { imageBackground: { image1 }, title: 'Tắm trắng toàn thân', time: '15 min', price: '$100' },
-    { imageBackground: { image1 }, title: 'Tắm trắng toàn thân', time: '15 min', price: '$100' },      
-    { imageBackground: { image1 }, title: 'Tắm trắng toàn thân', time: '15 min', price: '$100' },
-    { imageBackground: { image1 }, title: 'Tắm trắng toàn thân', time: '15 min', price: '$100' },
-    { imageBackground: { image1 }, title: 'Tắm trắng toàn thân', time: '15 min', price: '$100' },
-    { imageBackground: { image1 }, title: 'Tắm trắng toàn thân', time: '15 min', price: '$100' },
+    { imageBackground: { image1 }, title: 'Tắm trắng toàn thân', rating: 5, price: '$100' },
+    { imageBackground: { image1 }, title: 'Tắm trắng toàn thân', rating: -1, price: '$100' },
+    { imageBackground: { image1 }, title: 'Tắm trắng toàn thân', rating: 4.8, price: '$100' },      
+    { imageBackground: { image1 }, title: 'Tắm trắng toàn thân', rating: 4.6, price: '$100' },
+    { imageBackground: { image1 }, title: 'Tắm trắng toàn thân', rating: 4.6, price: '$100' },
+    { imageBackground: { image1 }, title: 'Tắm trắng toàn thân', rating: 4.6, price: '$100' },
+    { imageBackground: { image1 }, title: 'Tắm trắng toàn thân', rating: 4.6, price: '$100' },
 
 
 ]
 
-const Book3 = ({navigation}) => {
-    const [modalVisible, setModalVisible] = useState(false);
+const AppointmentDetail = ({navigation}) => {
     const renderItem = ({ item }) => (
-        <CardChiTietBook3 itemimageBackground={item.itemimageBackground} title={item.title} time={item.time} price={item.price} />
+        <CardAppointmentDetail itemimageBackground={item.itemimageBackground} title={item.title} rating={item.rating} price={item.price} />
     );
-    
-    return (    
-        <View style={styles.viewContainer}>            
-            <Modal
-                animationType="slide"
-                transparent={true}
-                visible={modalVisible}
-                onRequestClose={() => {
-                Alert.alert("Modal has been closed.");
-                }} >
-                <View style={styles.centeredView}>
-                    <View style={styles.modalView}>
-                        <Image source={Success} style={{height:windowWidth*0.34,width:windowWidth*0.55}}/>                  
-                        <View >
-                            <Text style={{fontSize:20,fontWeight:"600", color:'#EB5757', marginTop:windowWidth*0.1,
-                                        height:windowWidth*0.128,width:windowWidth*0.46,textAlign:'center'}} >
-                                Bạn đã đặt lịch thành công
-                            </Text>
-                        </View>
-                        <View >
-                            <Text style={{fontSize:14,fontWeight:"600", color:'#BDBDBD', marginTop:windowWidth*0.03,
-                                        height:windowWidth*0.128,width:windowWidth*0.46,textAlign:'center'}} >
-                                Bạn có thể theo dõi lịch hẹn tại Appointment
-                            </Text>
-                        </View>
-                        <TouchableOpacity style={{width:windowWidth*0.61,height:windowWidth*0.09, backgroundColor:'#EB5757',
-                                 alignItems:'center',justifyContent:'center',borderRadius:8,marginTop:windowWidth*0.09}} 
-                                 onPress={() => {
-                                    setModalVisible(!modalVisible);
-                                  }}>
-                            <Text style={{fontSize: 14,color:'white'}} >Back to Appointment</Text>
-                        </TouchableOpacity>
-                        <TouchableOpacity style={{width:windowWidth*0.61,height:windowWidth*0.09, borderColor:'#EB5757', borderWidth:1,
-                                 alignItems:'center',justifyContent:'center',borderRadius:8,marginTop:windowWidth*0.05}} 
-                                 onPress={() => {
-                                    setModalVisible(!modalVisible);
-                                  }}>
-                            <Text style={{fontSize: 14,color:'#EB5757'}} >Home</Text>
-                        </TouchableOpacity>
-                        
-                    </View>
-                </View>
-      </Modal>
+    return(
+        <View View style={styles.viewContainer}>
             <View style={styles.header}>
                 <TouchableOpacity>
                     <Icon name='arrow-back-ios' style={styles.iconMenu}></Icon>
                 </TouchableOpacity>
                 <View style={styles.headerFontContainer}>
-                    <Text style={styles.headerFont}>Đặt lịch</Text>
+                    <Text style={styles.headerFont}>Chi Tiết</Text>
                 </View>             
             </View>
-            <ScrollView>
+            <ScrollView >
                 <View style={styles.thongTinContainer}>
                     <View >
                         <Text style={styles.tieuDeStyle}>Thông tin</Text>
@@ -111,8 +69,7 @@ const Book3 = ({navigation}) => {
                                 <Text style={styles.fontChiTiet2}>Thường</Text>                               
                             </View> 
                             }
-                            
-                            
+                                                    
                         </View>                
                     </View>                   
                 </View>
@@ -126,38 +83,20 @@ const Book3 = ({navigation}) => {
                     </View>
                 </View>             
             </ScrollView>
-            <View >
-                <TouchableOpacity style={styles.khuyenMaiContainer}>
-                    <View style={{flexDirection:'row',alignItems:'center'}}>
-                        <IconDiscount name='ticket' style={{fontSize: 25,marginRight:5}}/>
-                        <Text style={{fontSize: 16,fontWeight:'bold'}}>Khuyến mãi</Text>
-                    </View>
-                    <View style={{width:windowWidth*0.52,height:windowHeight*0.033, borderWidth:1,
-                                 borderColor:'#BDBDBD',alignItems:'center',justifyContent:'center',borderRadius:5}}>
-                        <Text style={{fontSize: 12,color:'#BDBDBD'}} >Nhập mã</Text>
-                    </View>
-                </TouchableOpacity>
-            </View>
             <View style={styles.tongTienContainer}>
-                <View style={{flexDirection:'row'}}>
+                <View style={{flexDirection:'row',marginBottom:windowWidth*0.04,width:windowWidth*0.42,justifyContent:'space-between'}}>
+                    <Text style={{fontSize:16,fontWeight:'bold'}}>Khuyến mãi</Text>
+                    <Text style={{fontSize:16,fontWeight:'bold',color:'#EB5757',marginLeft:windowHeight*0.02}}>$100</Text>
+                </View>
+                <View style={{flexDirection:'row',width:windowWidth*0.42,justifyContent:'space-between'}}>
                     <Text style={{fontSize:16,fontWeight:'bold'}}>Tổng cộng</Text>
                     <Text style={{fontSize:16,fontWeight:'bold',color:'#EB5757',marginLeft:windowHeight*0.02}}>$1000</Text>
                 </View>
-                <TouchableOpacity style={{width:windowWidth*0.35,height:windowWidth*0.1, backgroundColor:'#EB5757',
-                                 alignItems:'center',justifyContent:'center',borderRadius:5,marginRight:5}} 
-                                 onPress={() => {
-                                    setModalVisible(!modalVisible);
-                                  }}>
-                        <Text style={{fontSize: 14,color:'white'}} >Thanh toán</Text>
-                    </TouchableOpacity>
             </View>
-           
         </View>
-        
-        
     );
-}
 
+}
 const styles = StyleSheet.create({
     viewContainer: {
         flex: 1,
@@ -203,28 +142,16 @@ const styles = StyleSheet.create({
     dichVuContainer:{ 
         marginHorizontal: 16,
     },
-    khuyenMaiContainer:{ 
-        flexDirection:'row',
-        justifyContent:'space-between',
-        alignItems:'center',
-        height: windowHeight*0.066,
+    
+    tongTienContainer:{   
+        alignItems:'flex-end',
+        height: windowWidth*0.27,
         width:windowWidth,
-        paddingHorizontal:windowWidth*0.04,
-        borderWidth: 1,
-        borderTopColor:'#BDBDBD',
-        borderBottomColor:'white',
-        marginBottom:-5
-    },
-    tongTienContainer:{ 
-        flexDirection:'row',
-        justifyContent:'space-between',
-        alignItems:'center',
-        height: windowWidth*0.16,
-        width:windowWidth,
-        paddingHorizontal:windowWidth*0.04,
+        paddingRight:windowWidth*0.06,
+        paddingTop:windowWidth*0.045,
         borderColor:'#BDBDBD',
-        borderWidth:1,
-        borderTopStartRadius:5
+        borderTopWidth:0.5,
+        borderTopLeftRadius:10
 
     },
     tieuDeStyle:{      
@@ -291,4 +218,5 @@ const styles = StyleSheet.create({
         elevation: 24,
       },
 })
-export default Book3;
+
+export default AppointmentDetail;

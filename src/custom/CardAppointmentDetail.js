@@ -9,7 +9,7 @@ const windowWidth = Dimensions.get('window').width;
 const windowHeight = Dimensions.get('window').height;
 
 const CardCustom = (props) => {
-    const { imageBackground, title, time, price } = props;
+    const { imageBackground, title, rating, price } = props;
     return (
         <View style={styles.container}>
             <View style={styles.cardContent}>
@@ -17,10 +17,17 @@ const CardCustom = (props) => {
                     <Image source={backgroundImage} style={styles.image}></Image>
                     <View style={{ flexDirection: 'row',width:windowWidth*0.65, marginTop: 2, justifyContent: 'space-between', alignItems: 'center'}}>
                         <View style={{  marginLeft: 5,}}>
-                            <Text style={{ fontSize: 14, fontWeight: 'bold' }}>{title}</Text>  
-                            <Text style={{ fontSize: 12, fontWeight: 'bold', color:'#EB5757'}}>{time}</Text>
+                            <Text style={{ fontSize: 16, fontWeight: 'bold' }}>{title}</Text>  
+                            <Text style={{ fontSize: 14, fontWeight: 'bold', color:'#EB5757',marginTop:windowWidth*0.012}}>{price}</Text>
                         </View>
-                        <Text style={{ fontSize: 20, fontWeight: 'bold', color:'#EB5757'}}>{price}</Text>                  
+                        {rating<0?
+                        <View style={{width:windowWidth*0.133,height:windowWidth*0.056,justifyContent:'center', borderRadius:4,backgroundColor:'#EB5757',alignItems:'center'}}>
+                            <Text style={{ fontSize: 14, fontWeight: 'bold', color:'white'}}>Rating</Text>
+                        </View>
+                         :
+                        <View style={{width:windowWidth*0.093,height:windowWidth*0.056,justifyContent:'center', borderRadius:4,backgroundColor:'#F2C94C',alignItems:'center'}}>
+                            <Text style={{ fontSize: 14,color:'white' }}>{rating}</Text>
+                        </View>}                
                     </View>                   
                 </View>              
             </View>

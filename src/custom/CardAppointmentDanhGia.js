@@ -11,7 +11,7 @@ const CardCustom = (props) => {
     
     return (
         <View style={styles.container}>
-            <View style={styles.cardContent}>
+            <TouchableOpacity style={styles.cardContent}>
                 <View style={styles.content}>
                     <Image source={backgroundImage} style={styles.image}></Image>
                     <View style={{paddingLeft:windowWidth*0.02 }}>                       
@@ -32,7 +32,7 @@ const CardCustom = (props) => {
                                         <Text style={{ fontSize: 12,color:'#EB5757',paddingLeft:windowWidth*0.015 }}>Chưa Đánh Giá</Text>     
                                     )
                                     :
-                                    (<View style={{width:windowWidth*0.06,height:windowWidth*0.04,marginLeft:windowWidth*0.015, borderRadius:4,backgroundColor:'#F2C94C',alignItems:'center'}}>
+                                    (<View style={{width:windowWidth*0.06,height:windowWidth*0.04,marginLeft:windowWidth*0.015,justifyContent:'center', borderRadius:4,backgroundColor:'#F2C94C',alignItems:'center'}}>
                                         <Text style={{ fontSize: 10,color:'white' }}>{rate}</Text>
                                     </View>)}
                                 </View>
@@ -44,7 +44,7 @@ const CardCustom = (props) => {
                         </View>                                                          
                     </View>                   
                 </View>              
-            </View>
+            </TouchableOpacity>
             
         </View>
     );
