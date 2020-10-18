@@ -27,6 +27,7 @@ const data1 = [
 ]
 
 const AppointmentDetail = ({navigation}) => {
+    
     const renderItem = ({ item }) => (
         <CardAppointmentDetail itemimageBackground={item.itemimageBackground} title={item.title} rating={item.rating} price={item.price} />
     );
