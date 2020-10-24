@@ -61,11 +61,14 @@ const styles = StyleSheet.create({
         marginVertical:windowWidth*0.025
     },
     image: {
-        position: 'relative',
-        height: windowWidth*0.16,
-        width: windowWidth*0.16,
-        borderRadius:8,
-        marginHorizontal:windowWidth*0.02
+        
+        height: windowWidth*0.2,
+        width: windowWidth*0.2,
+        borderRadius:8
+        // borderTopLeftRadius:8,
+        // borderBottomLeftRadius:8
+
+       
     },
     content: {
         flexDirection: 'row',

@@ -10,7 +10,7 @@ import {
 import { NavigationContainer } from '@react-navigation/native';
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 import Icon from 'react-native-vector-icons/MaterialIcons';
-import { Home, Bag, Appointment, Info,AppointmentDetail } from './src/components/screens/index'
+import { Home, Bag, Appointment, Info,AppointmentDetail,ChangePassword } from './src/components/screens/index'
 import { createStackNavigator } from '@react-navigation/stack';
 
 const Tab = createBottomTabNavigator();
@@ -54,7 +54,7 @@ function HomeTabs() {
 
 const App = () => {
   return (
-    <AppointmentDetail></AppointmentDetail>
+    <ChangePassword></ChangePassword>
     // <NavigationContainer>
     //   <Stack.Navigator initialRouteName='Tabbar'>       
     //     <Stack.Screen name="Tabbar" component={HomeTabs} options={{headerShown: false}} />

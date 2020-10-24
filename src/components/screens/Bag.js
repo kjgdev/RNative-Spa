@@ -45,10 +45,10 @@ const Bag = () => {
                     <Text style={{fontSize:16,fontWeight:'bold'}}>Tổng cộng</Text>
                     <Text style={{fontSize:16,fontWeight:'bold',color:'#EB5757',marginLeft:windowHeight*0.02}}>$1000</Text>
                 </View>
-                <TouchableOpacity style={{width:windowWidth*0.35,height:windowWidth*0.1, backgroundColor:'#EB5757',
-                                alignItems:'center',justifyContent:'center',borderRadius:5,marginRight:5}} 
+                <TouchableOpacity style={{width:windowWidth*0.266,height:windowWidth*0.08, backgroundColor:'#EB5757',
+                                alignItems:'center',justifyContent:'center',borderRadius:5,marginRight:5,}} 
                                 onPress={() => {
-                                    setModalVisible(!modalVisible);
+                                    
                                 }}>
                         <Text style={{fontSize: 14,color:'white'}} >Đặt lịch</Text>
                     </TouchableOpacity>
@@ -98,8 +98,8 @@ const styles = StyleSheet.create({
         paddingHorizontal:windowWidth*0.04,
         borderColor:'#BDBDBD',
         borderWidth:1,
-        borderTopStartRadius:5
-
+        borderTopStartRadius:5,
+        marginBottom:windowWidth*0.11
     },
 })
 

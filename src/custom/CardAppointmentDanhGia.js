@@ -67,11 +67,10 @@ const styles = StyleSheet.create({
         marginVertical:windowWidth*0.025
     },
     image: {
-        position: 'relative',
-        height: windowWidth*0.16,
-        width: windowWidth*0.16,
+        height: windowWidth*0.2,
+        width: windowWidth*0.2,
         borderRadius:8,
-        marginHorizontal:windowWidth*0.02
+        
     },
     content: {
         flexDirection: 'row',

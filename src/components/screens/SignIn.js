@@ -50,7 +50,7 @@ const SignInContent= ({ navigation })=>{
                         </TextInput> 
                         
                     </View>              
-                    <View style={styles.input}   >
+                    <View style={styles.input}  >
                         <TextInput underlineColorAndroid='transparent' placeholder='Password' fontFamily='Lato' secureTextEntry={showPass}>
                         </TextInput> 
                         <TouchableOpacity style={styles.btnEye} onPress={functionShowPass}>

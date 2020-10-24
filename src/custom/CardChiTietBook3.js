@@ -44,11 +44,9 @@ const styles = StyleSheet.create({
         borderColor:'#BDBDBD',
     },
     image: {
-        position: 'relative',
-        height: 50,
-        width: 50,
+        height: windowWidth*0.17,
+        width: windowWidth*0.17,
         borderRadius:8,
-        marginHorizontal:windowWidth*0.02
     },
     content: {
         flexDirection: 'row',
