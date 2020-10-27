@@ -18,7 +18,7 @@ const data1 = [
 ]
 
 
-const Appointment = () => { 
+const Appointment = ({navigation}) => { 
     
     const [dgHen,setDgHen]= useState(true);
     const [daHoanThanh,setDaHoanThanh]= useState(false);

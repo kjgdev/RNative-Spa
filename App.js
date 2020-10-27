@@ -10,7 +10,7 @@ import {
 import { NavigationContainer } from '@react-navigation/native';
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 import Icon from 'react-native-vector-icons/MaterialIcons';
-import { Home, Bag, Appointment, Info,AppointmentDetail,ChangePassword } from './src/components/screens/index'
+import { Home, Bag, Appointment, Info,AppointmentDetail,ChangePassword,SignIn,SignUp } from './src/components/screens/index'
 import { createStackNavigator } from '@react-navigation/stack';
 
 const Tab = createBottomTabNavigator();
@@ -54,14 +54,15 @@ function HomeTabs() {
 
 const App = () => {
   return (
-    <ChangePassword></ChangePassword>
-    // <NavigationContainer>
-    //   <Stack.Navigator initialRouteName='Tabbar'>       
-    //     <Stack.Screen name="Tabbar" component={HomeTabs} options={{headerShown: false}} />
-    //     <Stack.Screen name="AppointmentDetail" component={AppointmentDetail} options={{headerShown: false}} />
-    //   </Stack.Navigator>
-     
-    // </NavigationContainer>
+    <NavigationContainer>
+      <Stack.Navigator initialRouteName='SignIn'>       
+        <Stack.Screen name="Tabbar" component={HomeTabs} options={{headerShown: false}} />
+        <Stack.Screen name="SignIn" component={SignIn} options={{headerShown: false}} />
+        <Stack.Screen name="SignUp" component={SignUp} options={{headerShown: false}} />
+        <Stack.Screen name="ChangePassword" component={ChangePassword} options={{headerShown: false}} />
+        <Stack.Screen name="AppointmentDetail" component={AppointmentDetail} options={{headerShown: false}} />
+      </Stack.Navigator>
+    </NavigationContainer>
   );
 };
 

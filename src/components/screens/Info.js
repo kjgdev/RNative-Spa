@@ -8,7 +8,7 @@ const windowWidth = Dimensions.get('window').width;
 const windowHeight = Dimensions.get('window').height;
 const dataInfo = {completedDate:10,completedService:20,point:120,name:'Nguyễn Ánh'};
 
-const Info = () => {
+const Info = ({ navigation }) => {
     return (
         <View style={styles.container}>
             <View style={styles.avatarContainer}>
@@ -31,7 +31,9 @@ const Info = () => {
             </View>
             <View style={styles.seperate} />
             <View>
-                <TouchableOpacity style={styles.buttonContainer}>
+                <TouchableOpacity style={styles.buttonContainer} onPress={() => {
+                        navigation.navigate('ChangePassword')
+                    }}>
                     <View style={styles.viewInbutton}>
                         <Icon name='vpn-key' style={styles.IconStyle}></Icon>
                         <Text  style={styles.fontInButton}>Đổi mật khẩu</Text>
